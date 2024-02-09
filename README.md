@@ -19,20 +19,31 @@ You can install the necessary libraries using pip:
 
 ```bash
 pip install torch pandas numpy matplotlib scikit-learn
-
-## Usage 
-To run the neural network model, simply execute the main script:
 ```
+
+Or, if you prefer using Conda, you can create a new environment and install the required packages:
+
+```bash
+conda create -n mushroom_classification python=3.x
+conda activate mushroom_classification
+conda install pytorch pandas numpy matplotlib scikit-learn -c pytorch
+```
+
+## Usage
+
+To run the neural network model, simply execute the main script:
+
+```bash
 python mushroom_classifier.py
 ```
 
 The script will perform the following steps:
+- Load and preprocess the dataset.
+- Split the dataset into training and testing sets.
+- Define and train the neural network model.
+- Evaluate the model's performance on the test set.
+- Display a classification report and confusion matrix.
 
-Load and preprocess the dataset.
-Split the dataset into training and testing sets.
-Define and train the neural network model.
-Evaluate the model's performance on the test set.
-Display a classification report and confusion matrix.
-Model Architecture
+## Model Architecture
+
 The neural network consists of an input layer, one hidden layer, and an output layer. The ReLU activation function is used in the hidden layer, and a LogSoftmax function is used in the output layer with Negative Log-Likelihood Loss (NLLLoss) as the loss function for training.
-
