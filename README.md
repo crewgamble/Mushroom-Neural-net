@@ -21,14 +21,6 @@ You can install the necessary libraries using pip:
 pip install torch pandas numpy matplotlib scikit-learn
 ```
 
-Or, if you prefer using Conda, you can create a new environment and install the required packages:
-
-```bash
-conda create -n mushroom_classification python=3.x
-conda activate mushroom_classification
-conda install pytorch pandas numpy matplotlib scikit-learn -c pytorch
-```
-
 ## Usage
 
 To run the neural network model, simply execute the main script:
