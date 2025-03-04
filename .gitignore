@@ -4,9 +4,6 @@ __pycache__/
 *$py.class
 *.so
 .Python
-venv/
-ENV/
-env/
 build/
 develop-eggs/
 dist/
@@ -23,14 +20,24 @@ wheels/
 .installed.cfg
 *.egg
 
-# Uploads directory (since it's for temporary file uploads)
-uploads/
+# Virtual Environment
+venv/
+ENV/
+env/
 
 # IDE
 .idea/
 .vscode/
 *.swp
 *.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+uploads/
+*.pth
 
 # Environment variables
 .env
@@ -49,3 +56,7 @@ logs/
 .Trashes
 ehthumbs.db
 Thumbs.db 
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
