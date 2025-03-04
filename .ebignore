@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+.env
+
+# Frontend
+frontend/
+node_modules/
+
+# Development
+.git/
+.gitignore
+.idea/
+.vscode/
+
+# Local development settings
+*.log
+.DS_Store
+
+# Keep these files
+!requirements.txt
+!Procfile
+!app.py
+!model.pth
+!feature_names.txt
+!feature_info.json
+!image_analyzer.py
+!mushroom_classifier.py 

@@ -1,5 +1,3 @@
-%matplotlib inline
-
 # Import necessary libraries
 import pandas as pd
 import torch
@@ -89,6 +87,10 @@ for epoch in range(num_epochs):
     losses.append(epoch_loss)
     print(f'Epoch {epoch+1}/{num_epochs}, Loss: {epoch_loss}')
 
+# Save the trained model
+torch.save(model.state_dict(), 'model.pth')
+print("Model saved to model.pth")
+
 # Evaluate the model
 model.eval()  # Set the model to evaluation mode
 y_pred = []
@@ -120,3 +122,9 @@ plt.yticks(tick_marks, range(num_classes))
 plt.xlabel('Predicted label')
 plt.ylabel('True label')
 plt.show()
+
+# Save feature names for the API
+feature_names = X_encoded.columns.tolist()
+with open('feature_names.txt', 'w') as f:
+    for feature in feature_names:
+        f.write(f"{feature}\n")

@@ -1,0 +1,10 @@
+flask==3.0.2
+flask-cors==4.0.0
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.2.0+cpu
+pandas==2.2.0
+numpy==1.26.4
+ucimlrepo==0.0.3
+Werkzeug==3.0.1
+gunicorn==21.2.0
+pillow==10.2.0 
