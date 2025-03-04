@@ -21,18 +21,21 @@ app = Flask(__name__)
 # Configure CORS
 CORS(app, resources={
     r"/*": {
-        "origins": "*",
+        "origins": ["http://18.212.183.99", "http://localhost:5173"],
         "methods": ["GET", "POST", "OPTIONS"],
-        "allow_headers": ["Content-Type", "Authorization"],
-        "supports_credentials": False
+        "allow_headers": ["Content-Type", "Authorization", "Accept"],
+        "supports_credentials": True
     }
 })
 
 @app.after_request
 def after_request(response):
-    response.headers.add('Access-Control-Allow-Origin', '*')
-    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
-    response.headers.add('Access-Control-Allow-Methods', 'GET,POST,OPTIONS')
+    origin = request.headers.get('Origin')
+    if origin in ["http://18.212.183.99", "http://localhost:5173"]:
+        response.headers.add('Access-Control-Allow-Origin', origin)
+        response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization,Accept')
+        response.headers.add('Access-Control-Allow-Methods', 'GET,POST,OPTIONS')
+        response.headers.add('Access-Control-Allow-Credentials', 'true')
     return response
 
 # Configure upload folder
